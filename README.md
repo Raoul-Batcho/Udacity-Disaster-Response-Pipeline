@@ -1,116 +1,73 @@
-# Disaster Response Pipeline Project (Udacity - Data Science Nanodegree)
-
-![Intro Pic](screenshots/intro.png)
-
-
+# Disaster Response Pipeline Project (Udacity - Data Scientist Nanodegree Program)
 ## Table of Contents
-1. [Description](#description)
-2. [Getting Started](#getting_started)
-	1. [Dependencies](#dependencies)
-	2. [Installing](#installation)
-	3. [Executing Program](#execution)
-	4. [Additional Material](#material)
-3. [Authors](#authors)
-4. [License](#license)
-5. [Acknowledgement](#acknowledgement)
-6. [Screenshots](#screenshots)
+1. [Introduction](https://github.com/louisteo9/udacity-disaster-response-pipeline#introduction)
+2. [File Descriptions](https://github.com/louisteo9/udacity-disaster-response-pipeline#file-descriptions)
+3. [Installation](https://github.com/louisteo9/udacity-disaster-response-pipeline#installation)
+4. [Instructions](https://github.com/louisteo9/udacity-disaster-response-pipeline#instructions)
+5. [Acknowledgements](https://github.com/louisteo9/udacity-disaster-response-pipeline#acknowledgements)
+6. [Screenshots](https://github.com/louisteo9/udacity-disaster-response-pipeline#screenshots)
 
-<a name="descripton"></a>
-## Description
+## Introduction
+This project is part of the Udacity's Data Scientist Nanodegree Program in collaboration with [Figure Eight](https://www.figure-eight.com/).
 
-This Project is part of Data Science Nanodegree Program by Udacity in collaboration with Figure Eight. The dataset contains pre-labelled tweet and messages from real-life disaster events. The project aim is to build a Natural Language Processing (NLP) model to categorize messages on a real time basis.
+In this project, the pre-labeled disaster messages will be used to build a disaster response model that can categorize messages received in real time during a disaster event, so that messages can be sent to the right disaster response agency.
 
-This project is divided in the following key sections:
+This project includes a web application where disaster response worker can input messages received and get classification results.
 
-1. Processing data, building an ETL pipeline to extract data from source, clean the data and save them in a SQLite DB
-2. Build a machine learning pipeline to train the which can classify text message in various categories
-3. Run a web app which can show model results in real time
+## File Descriptions
+### Folder: app
+**run.py** - python script to launch web application.<br/>
+Folder: templates - web dependency files (go.html & master.html) required to run the web application.
 
-<a name="getting_started"></a>
-## Getting Started
+### Folder: data
+**disaster_messages.csv** - real messages sent during disaster events (provided by Figure Eight)<br/>
+**disaster_categories.csv** - categories of the messages<br/>
+**process_data.py** - ETL pipeline used to load, clean, extract feature and store data in SQLite database<br/>
+**ETL Pipeline Preparation.ipynb** - Jupyter Notebook used to prepare ETL pipeline<br/>
+**DisasterResponse.db** - cleaned data stored in SQlite database
 
-<a name="dependencies"></a>
-### Dependencies
-* Python 3.5+
-* Machine Learning Libraries: NumPy, SciPy, Pandas, Sciki-Learn
-* Natural Language Process Libraries: NLTK
-* SQLlite Database Libraqries: SQLalchemy
-* Model Loading and Saving Library: Pickle
-* Web App and Data Visualization: Flask, Plotly
+### Folder: models
+**train_classifier.py** - ML pipeline used to load cleaned data, train model and save trained model as pickle (.pkl) file for later use<br/>
+**classifier.pkl** - pickle file contains trained model<br/>
+**ML Pipeline Preparation.ipynb** - Jupyter Notebook used to prepare ML pipeline
 
-<a name="installation"></a>
-### Installing
-To clone the git repository:
-```
-git clone https://github.com/canaveensetia/udacity-disaster-response-pipeline.git
-```
-<a name="execution"></a>
-### Executing Program:
-1. You can run the following commands in the project's directory to set up the database, train model and save the model.
+## Installation
+There should be no extra libraries required to install apart from those coming together with Anaconda distribution. There should be no issue to run the codes using Python 3.5 and above.
 
-    - To run ETL pipeline to clean data and store the processed data in the database
-        `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/disaster_response_db.db`
-    - To run the ML pipeline that loads data from DB, trains classifier and saves the classifier as a pickle file
-        `python models/train_classifier.py data/disaster_response_db.db models/classifier.pkl`
+## Instructions
+1. Run the following commands in the project's root directory to set up your database and model.
+
+    - To run ETL pipeline that cleans data and stores in database
+        `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
+    - To run ML pipeline that trains classifier and saves
+        `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
 
 2. Run the following command in the app's directory to run your web app.
     `python run.py`
 
 3. Go to http://0.0.0.0:3001/
 
-<a name="material"></a>
-### Additional Material
-
-In the **data** and **models** folder you can find two jupyter notebook that will help you understand how the model works step by step:
-1. **ETL Preparation Notebook**: learn everything about the implemented ETL pipeline
-2. **ML Pipeline Preparation Notebook**: look at the Machine Learning Pipeline developed with NLTK and Scikit-Learn
-
-You can use **ML Pipeline Preparation Notebook** to re-train the model or tune it through a dedicated Grid Search section.
-
-<a name="importantfiles"></a>
-### Important Files
-**app/templates/***: templates/html files for web app
-
-**data/process_data.py**: Extract Train Load (ETL) pipeline used for data cleaning, feature extraction, and storing data in a SQLite database
-
-**models/train_classifier.py**: A machine learning pipeline that loads data, trains a model, and saves the trained model as a .pkl file for later use
-
-**run.py**: This file can be used to launch the Flask web app used to classify disaster messages
-
-<a name="license"></a>
-## License
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-<a name="acknowledgement"></a>
 ## Acknowledgements
+* [Udacity](https://www.udacity.com/) for providing an excellent Data Scientist training program.
+* [Figure Eight](https://www.figure-eight.com/) for providing dataset to train our model.
 
-* [Udacity](https://www.udacity.com/) for providing an amazing Data Science Nanodegree Program
-* [Figure Eight](https://www.figure-eight.com/) for providing the relevant dataset to train the model
-
-<a name="screenshots"></a>
 ## Screenshots
+1. Main page shows the Overview of Training Dataset & Distribution of Message Categories
+![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/1.%20main%20page.JPG)
 
-1. This is an example of a message we can type to test the performance of the model
+2. Enter message and click 'Classify Message'
+![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/2.%20enter%20msg%20click%20classify.JPG)
 
-![Sample Input](screenshots/sample_input.png)
+3. After clicking 'Classify Message', we can see the category(ies) of which the message is classified to , highlighted in green
+![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/3.%20classify%20result.JPG)
 
-2. After clicking **Classify Message**, we can see the categories which the message belongs to highlighted in green
+4. Run process_data.py for ETL pipeline
+![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/4.%20run%20process_data.JPG)
 
-![Sample Output](screenshots/sample_output.png)
+5. Run train_classifier.py for ML pipeline
+![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/5.%20run%20train_classifier_1_rev1.JPG)
+![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/5.%20run%20train_classifier_2_rev1.JPG)
+![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/5.%20run%20train_classifier_3_rev1.JPG)
 
-3. The main page shows some graphs about training dataset, provided by Figure Eight
-
-![Main Page](screenshots/main_page.png)
-
-4. Sample run of process_data.py
-
-![Process Data](screenshots/process_data.png)
-
-5. Sample run of train_classifier.py
-
-![Train Classifier without Category Level Precision Recall](screenshots/train_classifier.png)
-
-6. Sample run of train_classifier.py with precision, recall etc. for each category
-
-![Train Classifier with Category Level Precision Recall](screenshots/train_classifier_category_precision_recall.png)
-
+6. Run run.py in app's directory to run web app<br/>
+![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/6.%20run%20app.JPG)

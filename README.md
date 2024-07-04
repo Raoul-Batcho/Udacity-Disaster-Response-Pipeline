@@ -59,7 +59,7 @@ There should be no extra libraries required to install apart from those coming t
 ![image](https://github.com/Raoul-Batcho/Udacity-Disaster-Response-Pipeline/blob/main/screnshots/3.%20classify%20result.JPG)
 
 3. Run process_data.py for ETL pipeline
-![image](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline/blob/main/screenshots/4.%20run%20process_data.JPG)
+![image](https://github.com/Raoul-Batcho/Udacity-Disaster-Response-Pipeline/blob/main/screnshots/4.%20disaster_img.png)
 
 4. Run train_classifier.py for ML pipeline
 ![image](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline/blob/main/screenshots/5.%20run%20train_classifier_1_rev1.JPG)

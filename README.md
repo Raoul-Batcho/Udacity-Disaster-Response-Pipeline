@@ -55,19 +55,16 @@ There should be no extra libraries required to install apart from those coming t
 1. Main page shows the Overview of Training Dataset & Distribution of Message Categories
 ![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/1.%20main%20page.JPG)
 
-2. Enter message and click 'Classify Message'
-![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/2.%20enter%20msg%20click%20classify.JPG)
-
-3. After clicking 'Classify Message', we can see the category(ies) of which the message is classified to , highlighted in green
+2. After entering the message and clicking 'Classify Message', we can see the category(ies) of which the message is classified to , highlighted in green
 ![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/3.%20classify%20result.JPG)
 
-4. Run process_data.py for ETL pipeline
+3. Run process_data.py for ETL pipeline
 ![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/4.%20run%20process_data.JPG)
 
-5. Run train_classifier.py for ML pipeline
+4. Run train_classifier.py for ML pipeline
 ![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/5.%20run%20train_classifier_1_rev1.JPG)
 ![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/5.%20run%20train_classifier_2_rev1.JPG)
 ![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/5.%20run%20train_classifier_3_rev1.JPG)
 
-6. Run run.py in app's directory to run web app<br/>
+5. Run run.py in app's directory to run web app<br/>
 ![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/6.%20run%20app.JPG)

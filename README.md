@@ -8,11 +8,9 @@
 6. [Screenshots](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline#screenshots)
 
 ## Introduction
-This project is part of the Udacity's Data Scientist Nanodegree Program in collaboration with [Figure Eight](https://www.figure-eight.com/).
+In this Project Workspace, we work with real messages that were sent during disaster events. We will be creating a machine learning pipeline to categorize these events so that we can send the messages to an appropriate disaster relief agency.
 
-In this project, the pre-labeled disaster messages will be used to build a disaster response model that can categorize messages received in real time during a disaster event, so that messages can be sent to the right disaster response agency.
-
-This project includes a web application where disaster response worker can input messages received and get classification results.
+The project includes a web app where an emergency worker can input a new message and get classification results in several categories. The web app also displays visualizations of the data. This project will show off your software skills, including your ability to create basic data pipelines and write clean, organized code! [Figure Eight](https://www.figure-eight.com/).
 
 ## File Descriptions
 ### Folder: app

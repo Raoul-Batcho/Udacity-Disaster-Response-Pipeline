@@ -77,11 +77,6 @@ You can use **ML Pipeline Preparation Notebook** to re-train the model or tune i
 
 **run.py**: This file can be used to launch the Flask web app used to classify disaster messages
 
-<a name="authors"></a>
-## Authors
-
-* [Naveen Setia](https://github.com/canaveensetia)
-
 <a name="license"></a>
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

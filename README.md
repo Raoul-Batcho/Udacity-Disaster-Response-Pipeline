@@ -1,11 +1,11 @@
 # Disaster Response Pipeline Project (Udacity - Data Scientist Nanodegree Program)
 ## Table of Contents
-1. [Introduction](https://github.com/louisteo9/udacity-disaster-response-pipeline#introduction)
-2. [File Descriptions](https://github.com/louisteo9/udacity-disaster-response-pipeline#file-descriptions)
-3. [Installation](https://github.com/louisteo9/udacity-disaster-response-pipeline#installation)
-4. [Instructions](https://github.com/louisteo9/udacity-disaster-response-pipeline#instructions)
-5. [Acknowledgements](https://github.com/louisteo9/udacity-disaster-response-pipeline#acknowledgements)
-6. [Screenshots](https://github.com/louisteo9/udacity-disaster-response-pipeline#screenshots)
+1. [Introduction](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline#introduction)
+2. [File Descriptions](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline#file-descriptions)
+3. [Installation](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline#installation)
+4. [Instructions](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline#instructions)
+5. [Acknowledgements](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline#acknowledgements)
+6. [Screenshots](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline#screenshots)
 
 ## Introduction
 This project is part of the Udacity's Data Scientist Nanodegree Program in collaboration with [Figure Eight](https://www.figure-eight.com/).
@@ -53,21 +53,18 @@ There should be no extra libraries required to install apart from those coming t
 
 ## Screenshots
 1. Main page shows the Overview of Training Dataset & Distribution of Message Categories
-![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/1.%20main%20page.JPG)
+![image](https://github.com/Raoul-Batcho/Udacity-Disaster-Response-Pipeline/main/screenshots/1.%20main%20page.JPG)
 
-2. Enter message and click 'Classify Message'
-![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/2.%20enter%20msg%20click%20classify.JPG)
+2. After entering the message and clicking 'Classify Message', we can see the category(ies) of which the message is classified to , highlighted in green
+![image](https://github.com/Raoul-Batcho/Udacity-Disaster-Response-Pipeline/main/screenshots/3.%20classify%20result.JPG)
 
-3. After clicking 'Classify Message', we can see the category(ies) of which the message is classified to , highlighted in green
-![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/3.%20classify%20result.JPG)
+3. Run process_data.py for ETL pipeline
+![image](https://github.com/Raoul-Batcho/Udacity-Disaster-Response-Pipeline/blob/main/screenshots/4.%20run%20process_data.JPG)
 
-4. Run process_data.py for ETL pipeline
-![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/4.%20run%20process_data.JPG)
+4. Run train_classifier.py for ML pipeline
+![image](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline/blob/main/screenshots/5.%20run%20train_classifier_1_rev1.JPG)
+![image](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline/blob/main/screenshots/5.%20run%20train_classifier_2_rev1.JPG)
+![image](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline/blob/main/screenshots/5.%20run%20train_classifier_3_rev1.JPG)
 
-5. Run train_classifier.py for ML pipeline
-![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/5.%20run%20train_classifier_1_rev1.JPG)
-![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/5.%20run%20train_classifier_2_rev1.JPG)
-![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/5.%20run%20train_classifier_3_rev1.JPG)
-
-6. Run run.py in app's directory to run web app<br/>
-![image](https://github.com/louisteo9/udacity-disaster-response-pipeline/blob/main/screenshots/6.%20run%20app.JPG)
+5. Run run.py in app's directory to run web app<br/>
+![image](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline/blob/main/screenshots/6.%20run%20app.JPG)

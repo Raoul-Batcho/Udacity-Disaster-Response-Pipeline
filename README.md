@@ -65,6 +65,6 @@ There should be no extra libraries required to install apart from those coming t
 ![image](https://github.com/Raoul-Batcho/Udacity-Disaster-Response-Pipeline/blob/main/screnshots/5.%20disaster_img.png)
 ![image](https://github.com/Raoul-Batcho/Udacity-Disaster-Response-Pipeline/blob/main/screnshots/6.%20disaster_img.png)
 ![image]()
-
+![image]()
 5. Run run.py in app's directory to run web app<br/>
 ![image](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline/blob/main/screenshots/6.%20run%20app.JPG)

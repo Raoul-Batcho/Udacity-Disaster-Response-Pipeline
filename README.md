@@ -53,7 +53,7 @@ There should be no extra libraries required to install apart from those coming t
 
 ## Screenshots
 1. Main page shows the Overview of Training Dataset & Distribution of Message Categories
-![image](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline/blob/main/screenshots/1.%20main%20page.JPG)
+![image](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline/screenshots/1.%20main%20page.JPG)
 
 2. After entering the message and clicking 'Classify Message', we can see the category(ies) of which the message is classified to , highlighted in green
 ![image](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline/blob/main/screenshots/3.%20classify%20result.JPG)

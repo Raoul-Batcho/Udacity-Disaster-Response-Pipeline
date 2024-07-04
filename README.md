@@ -56,7 +56,7 @@ There should be no extra libraries required to install apart from those coming t
 ![image](https://github.com/Raoul-Batcho/Udacity-Disaster-Response-Pipeline/blob/main/screnshots/1.%20main%20page.JPG)
 
 2. After entering the message and clicking 'Classify Message', we can see the category(ies) of which the message is classified to , highlighted in green
-![image](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline/blob/main/screenshots/3.%20classify%20result.JPG)
+![image](https://github.com/Raoul-Batcho/Udacity-Disaster-Response-Pipeline/blob/main/screnshots/3.%20classify%20result.JPG)
 
 3. Run process_data.py for ETL pipeline
 ![image](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline/blob/main/screenshots/4.%20run%20process_data.JPG)

@@ -62,9 +62,9 @@ There should be no extra libraries required to install apart from those coming t
 ![image](https://github.com/Raoul-Batcho/Udacity-Disaster-Response-Pipeline/blob/main/screnshots/4.%20disaster_img.png)
 
 4. Run train_classifier.py for ML pipeline
-![image](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline/blob/main/screenshots/5.%20run%20train_classifier_1_rev1.JPG)
-![image](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline/blob/main/screenshots/5.%20run%20train_classifier_2_rev1.JPG)
-![image](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline/blob/main/screenshots/5.%20run%20train_classifier_3_rev1.JPG)
+![image](https://github.com/Raoul-Batcho/Udacity-Disaster-Response-Pipeline/blob/main/screnshots/5.%20disaster_img.png)
+![image](https://github.com/Raoul-Batcho/Udacity-Disaster-Response-Pipeline/blob/main/screnshots/6.%20disaster_img.png)
+![image]()
 
 5. Run run.py in app's directory to run web app<br/>
 ![image](https://github.com/Raoul-Batcho/udacity-disaster-response-pipeline/blob/main/screenshots/6.%20run%20app.JPG)

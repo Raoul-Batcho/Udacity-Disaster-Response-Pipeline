@@ -1,34 +1,31 @@
-import sys
 import pandas as pd
-import os
 import re
-import pickle
+import sys
+import os
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
+import pickle
+
 
 import nltk
 nltk.download(['punkt', 'wordnet', 'averaged_perceptron_tagger'])
 
-from sklearn.metrics import confusion_matrix, classification_report
-from sklearn.model_selection import GridSearchCV, train_test_split
-from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
-from sklearn.pipeline import Pipeline, FeatureUnion
-from sklearn.base import BaseEstimator, TransformerMixin
-from sklearn.multioutput import MultiOutputClassifier
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer, TfidfVectorizer
 from sqlalchemy import create_engine
+from sqlalchemy import create_engine
+from sklearn.multioutput import MultiOutputClassifier
+from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn.pipeline import Pipeline, FeatureUnion
+from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
+from sklearn.model_selection import GridSearchCV, train_test_split
+from sklearn.metrics import confusion_matrix, classification_report
 
-def load_data(database_filepath):
+
+def load_data(database_file_path):
     """
-    INPUT:
-    database_filepath - 
-    
-    OUTPUT:
-    X - messages (input variable) 
-    y - categories of the messages (output variable)
-    category_names - category name for y
+    This fuction takes as argument, the data base file path and returns input and output variables
     """
-    engine = create_engine('sqlite:///' + database_filepath)
+    engine = create_engine('sqlite:///' + database_file_path)
     df = pd.read_sql_table('DisasterResponse_table', engine)
     
     X = df['message']
@@ -36,14 +33,11 @@ def load_data(database_filepath):
     category_names = y.columns
     return X, y, category_names
 
-def tokenize(text):
+def tokenizer(text):
     """
-    INPUT:
-    text - raw text
+    This function takes raw text data as argument and returns clean tokenized data
+    """
     
-    OUTPUT:
-    clean_tokens - tokenized messages
-    """
     url_regex = 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
     detected_urls = re.findall(url_regex, text)
     for url in detected_urls:
@@ -53,20 +47,16 @@ def tokenize(text):
     lemmatizer = WordNetLemmatizer()
     
     clean_tokens = []
-    for tok in tokens:
-        clean_tok = lemmatizer.lemmatize(tok).lower().strip()
+    for token in tokens:
+        clean_token = lemmatizer.lemmatize(token).lower().strip()
         clean_tokens.append(clean_tok)
         
     return clean_tokens
 
 
-def build_model(clf = AdaBoostClassifier()):
+def model_builder(clf = AdaBoostClassifier()):
     """
-    INPUT:
-    clf - classifier model (If none is inputted, the function will use default 'AdaBoostClassifier' model) 
-    
-    OUTPUT:
-    cv = ML model pipeline after performing grid search
+    This function takes a machine learning Classifier model as argument and returns a model pipeline after performing grid search
     """
     pipeline = Pipeline([
         ('features', FeatureUnion([
@@ -79,8 +69,8 @@ def build_model(clf = AdaBoostClassifier()):
     ])
     
     parameters = {
-        'clf__estimator__learning_rate':[0.5, 1.0],
-        'clf__estimator__n_estimators':[10,20]
+        'clf__estimator__learning_rate':[0.01, 0.1, 1.0],
+        'clf__estimator__n_estimators':[10,20,30]
     
     }
         
@@ -90,14 +80,8 @@ def build_model(clf = AdaBoostClassifier()):
     
 def evaluate_model(model, X_test, Y_test, category_names):
     """
-    INPUT:
-    model - ML model
-    X_test - test messages
-    y_test - categories for test messages
-    category_names - category name for y
-    
-    OUTPUT:
-    none - print scores (precision, recall, f1-score) for each output category of the dataset.
+    This function takes as arguments the model - ML model, the test messages X_text, categories Y_test, category_names for y and returns
+    the scores (precision, recall, f1-score) for each output category of the dataset.
     """
     Y_pred_test = model.predict(X_test)
     print(classification_report(Y_test.values, Y_pred_test, target_names=category_names))
@@ -105,12 +89,7 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 def save_model(model, model_filepath):
     """
-    INPUT:
-    model - ML model
-    model_filepath - location to save the model
-    
-    OUTPUT:
-    none
+    This function saves the model as a pickle file
     """
     with open(model_filepath, 'wb') as f:
         pickle.dump(model, f)
@@ -119,12 +98,12 @@ def save_model(model, model_filepath):
 def main():
     if len(sys.argv) == 3:
         database_filepath, model_filepath = sys.argv[1:]
-        print('Loading data...\n    DATABASE: {}'.format(database_filepath))
+        print(f'Loading data...\n    DATABASE: {database_filepath}')
         X, Y, category_names = load_data(database_filepath)
         X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
         
         print('Building model...')
-        model = build_model()
+        model = model_builder()
         
         print('Training model...')
         model.fit(X_train, Y_train)
@@ -132,7 +111,7 @@ def main():
         print('Evaluating model...')
         evaluate_model(model, X_test, Y_test, category_names)
 
-        print('Saving model...\n    MODEL: {}'.format(model_filepath))
+        print('Saving model...\n    MODEL: {model_filepath}')
         save_model(model, model_filepath)
 
         print('Trained model saved!')

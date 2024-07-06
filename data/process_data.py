@@ -77,7 +77,7 @@ def main():
         df = clean_data(df)
         
         print(f'Saving data...\n    DATABASE: {database_filepath}')
-        save_data(df, database_filepath)
+        save_to_sql(df, database_filepath)
         
         print('Cleaned data saved to database!')
     

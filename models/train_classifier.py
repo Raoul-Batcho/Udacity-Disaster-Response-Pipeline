@@ -1,4 +1,4 @@
-import pandas as pd
+nimport pandas as pd
 import re
 import sys
 import os
@@ -49,7 +49,7 @@ def tokenize(text):
     clean_tokens = []
     for token in tokens:
         clean_token = lemmatizer.lemmatize(token).lower().strip()
-        clean_tokens.append(clean_tok)
+        clean_tokens.append(clean_token)
         
     return clean_tokens
 

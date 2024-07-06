@@ -33,7 +33,7 @@ def load_data(database_file_path):
     category_names = y.columns
     return X, y, category_names
 
-def tokenizer(text):
+def tokenize(text):
     """
     This function takes raw text data as argument and returns clean tokenized data
     """
